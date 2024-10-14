@@ -58,6 +58,5 @@ jobs:
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'python-app-mario'
-          slot-name: 'production'
+          app-name: 'TestApp01'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
