@@ -1,4 +1,4 @@
-ame: Build and Deploy Python App to Azure Web App
+name: Build and Deploy Python App to Azure Web App
 on:
   push:
     branches:
