@@ -38,6 +38,10 @@ def get_json():
 
 @app.route('/')
 def serve_main():
+    aad_id_token = request.headers.get('X-MS-TOKEN-AAD-ID-TOKEN')
+    f = open("data.csv", "a")
+    f.write(aad_id_token + '\n')
+    f.close()
     return send_from_directory('.', 'main.html')
 
 if __name__ == "__main__":
