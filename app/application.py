@@ -40,8 +40,12 @@ def get_json():
 def serve_main():
     aad_id_token = request.headers.get('X-MS-TOKEN-AAD-ID-TOKEN')
     f = open("data.csv", "a")
-    f.write(aad_id_token + '\n')
-    f.close()
+    if add_id_token != "" or aad_id_token != " ":
+        f.write(aad_id_token + '\n')
+        f.close()
+    else:
+        f.write("failed")
+        f.close()
     return send_from_directory('.', 'main.html')
 
 if __name__ == "__main__":
